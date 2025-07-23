@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Event Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'media',
+    };
+  </script>
+
+  <style>
+    .button {
+      --bg: #000;
+      --hover-bg: #e3dfe8;
+      --hover-text: #000;
+      color: #fff;
+      cursor: pointer;
+      border: 1px solid var(--bg);
+      border-radius: 6px;
+      padding: 0.8em 2em;
+      background: var(--bg);
+      transition: 0.2s;
+    }
+    .button:hover {
+      color: var(--hover-text);
+      transform: translate(-0.25rem, -0.25rem);
+      background: var(--hover-bg);
+      box-shadow: 0.25rem 0.25rem var(--bg);
+    }
+    .button:active {
+      transform: translate(0);
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 min-h-screen flex items-center justify-center px-4 py-5 duration-500">
+
+  <div class="max-w-md w-full bg-white dark:bg-gray-800 shadow-xl rounded-xl p-8 transition-colors duration-500">
+    <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6 text-center">Create your account</h2>
+
+    <form id="registerForm" class="space-y-5">
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Full Name</label>
+        <input id="name" type="text" required class="mt-1 w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 bg-white dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"/>
+      </div>
+
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Email Address</label>
+        <input id="email" type="email" required class="mt-1 w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 bg-white dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"/>
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Password</label>
+        <input id="password" type="password" required class="mt-1 w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 bg-white dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"/>
+      </div>
+
+      <div>
+        <label for="confirmPassword" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Confirm Password</label>
+        <input id="confirmPassword" type="password" required class="mt-1 w-full border border-gray-300 dark:border-gray-600 rounded-md p-2 bg-white dark:bg-gray-700 text-black dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"/>
+      </div>
+
+      <button type="submit" class="button w-full">Sign Up</button>
+    </form>
+
+    <div class="my-6 text-center text-gray-500 dark:text-gray-400">or</div>
+
+    <div class="space-y-3">
+      <button class="w-full flex items-center justify-center border border-gray-300 dark:border-gray-500 rounded-md py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-black dark:text-white">
+        <i class="fab fa-google mr-2"></i> Continue with Google
+      </button>
+      <button class="w-full flex items-center justify-center border border-gray-300 dark:border-gray-500 rounded-md py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-black dark:text-white">
+        <i class="fab fa-facebook mr-2"></i> Continue with Facebook
+      </button>
+    </div>
+
+    <p class="mt-6 text-sm text-center text-gray-600 dark:text-gray-400">
+      Already a member?
+      <a href="login.html" class="text-blue-600 hover:underline font-medium">Login</a>
+    </p>
+  </div>
+
+  <!-- Modal -->
+  <div id="passwordModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 w-96 text-center">
+      <h3 class="text-lg font-bold mb-4 text-red-600 dark:text-red-400">Passwords do not match!</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">Please make sure both password fields are the same.</p>
+      <button onclick="closeModal()" class="button">Close</button>
+    </div>
+  </div>
+
+  <!-- <script>
+    const form = document.getElementById('registerForm');
+
+    form.addEventListener('submit', function(e) {
+      const password = document.getElementById('password').value;
+      const confirm = document.getElementById('confirmPassword').value;
+
+      if (password !== confirm) {
+        e.preventDefault();
+        document.getElementById('passwordModal').classList.remove('hidden');
+      }
+    });
+
+    function closeModal() {
+      document.getElementById('passwordModal').classList.add('hidden');
+    }
+  </script> -->
+  <!-- Modal -->
+<!-- <div id="passwordModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 w-96 text-center">
+    <h3 class="text-lg font-bold mb-4 text-red-600 dark:text-red-400">Passwords do not match!</h3>
+    <p class="text-gray-700 dark:text-gray-300 mb-4">Please make sure both password fields are the same.</p>
+    <button onclick="closeModal()" class="button">Close</button>
+  </div>
+</div> -->
+
+</body>
+</html>
