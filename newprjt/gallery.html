@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Event Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .book {
+      position: relative;
+      width: 240px;
+      height: 320px;
+      perspective: 1200px;
+    }
+
+    .book-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .book:hover .book-inner {
+      transform: rotateY(180deg);
+    }
+
+    .book-front,
+    .book-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .book-front img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .book-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(135deg, #e0e7ff, #fef3c7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1rem;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 " style="background-image: url('./images/bg2.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+     <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/30 dark:bg-white/10 border-b border-white/20">
+        <div class=" flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3">
+                 <img src="./images/logo.png" alt="" width="40px" height="40px">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-black ">Ereignis</span>
+            </a>
+
+            <!-- Right section: Search & menu button -->
+            <div class="flex md:order-2 items-center gap-2">
+                <div class="relative hidden md:block">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="text"
+                        class="block w-full p-2 ps-10 text-sm text-white border border-gray-100 rounded-sm  placeholder-white  bg-stone-700"
+                        placeholder="Search..." />
+                </div>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-search" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300">
+                    <span class="sr-only">Open menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menu Links -->
+           <!-- Menu Links -->
+<div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+    <ul
+        class="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 p-4 md:p-0 font-medium bg-white/10 md:bg-transparent border border-white/10 md:border-0 rounded-lg backdrop-blur-md text-white">
+
+        <li>
+            <a href="./index.html"
+                class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">Home</a>
+        </li>
+        <li>
+            <a href="#about"
+                class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">About</a>
+        </li>
+        <li>
+            <a href="#services"
+                class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">Services</a>
+        </li>
+        <li>
+            <a href="./contact.html"
+                class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">Contact</a>
+        </li>
+
+        <!-- Login Button Style -->
+        <li>
+            <a href="./login.html"
+                class="inline-block bg-stone-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition duration-300">
+                Login
+            </a>
+        </li>
+    </ul>
+</div>
+
+    </nav>
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-4xl font-bold text-gray-800 mb-12">Event Gallery</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 justify-items-center">
+
+      <!-- Event Card Example -->
+      <div class="book">
+        <div class="book-inner">
+          <!-- Front Cover -->
+          <div class="book-front">
+            <img src="https://cdn.pixabay.com/photo/2020/11/10/10/57/wedding-5729381_1280.jpg" alt="Cake Bash">
+          </div>
+
+          <!-- Back Side -->
+          <div class="book-back">
+            <h3 class="text-xl font-bold text-gray-800">Cake Bash</h3>
+            <p class="text-gray-700 mt-2">Venue: Lulu Hall, Kochi</p>
+            <p class="text-gray-600">Date: Aug 10, 2025</p>
+            <p class="text-gray-600">Time: 6:00 PM - 9:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-inner">
+          <div class="book-front">
+            <img src="https://i.pinimg.com/736x/36/c5/27/36c527eae6efb3d4c4cb0c2d06e79a10.jpg" alt="Elegant Wedding">
+          </div>
+          <div class="book-back">
+            <h3 class="text-xl font-bold text-gray-800">Elegant Wedding</h3>
+            <p class="text-gray-700 mt-2">Venue: Lake Palace, Alappuzha</p>
+            <p class="text-gray-600">Date: Sep 22, 2025</p>
+            <p class="text-gray-600">Time: 4:00 PM - 10:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-inner">
+          <div class="book-front">
+            <img src="https://www.codemotion.com/magazine/wp-content/uploads/2020/04/35344608_1932760713412894_8299069717268660224_o-1024x683.jpg" alt="Tech Meetup">
+          </div>
+          <div class="book-back">
+            <h3 class="text-xl font-bold text-gray-800">Tech Meetup</h3>
+            <p class="text-gray-700 mt-2">Venue: Infopark, Kochi</p>
+            <p class="text-gray-600">Date: Oct 5, 2025</p>
+            <p class="text-gray-600">Time: 10:00 AM - 1:00 PM</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="book">
+        <div class="book-inner">
+          <div class="book-front">
+            <img src="https://images.stockcake.com/public/5/e/4/5e414fa8-acd3-469e-addc-5181b88f49aa_large/sunset-concert-vibes-stockcake.jpg" alt="Sunset Concert">
+          </div>
+          <div class="book-back">
+            <h3 class="text-xl font-bold text-gray-800">Sunset Concert</h3>
+            <p class="text-gray-700 mt-2">Venue: Varkala Beach</p>
+            <p class="text-gray-600">Date: Nov 18, 2025</p>
+            <p class="text-gray-600">Time: 5:30 PM - 8:00 PM</p>
+          </div>
+        </div>
+      </div>
+       <div class="book">
+        <div class="book-inner">
+          <div class="book-front">
+            <img src="https://media.timeout.com/images/106204051/image.jpg" alt="Music Festival">
+          </div>
+          <div class="book-back">
+            <h3 class="text-xl font-bold text-gray-800">Music festival</h3>
+            <p class="text-gray-700 mt-2">Venue: JLN Stadium, Kochi</p>
+            <p class="text-gray-600">Date: Oct 18, 2025</p>
+            <p class="text-gray-600">Time: 5:00 AM - 12:00 AM</p>
+          </div>
+        </div>
+      </div>
+       <div class="book">
+        <div class="book-inner">
+          <div class="book-front">
+            <img src="https://m.media-amazon.com/images/I/71IC2lqIgdL._UF1000,1000_QL80_.jpg" alt="Baby">
+          </div>
+          <div class="book-back">
+            <h3 class="text-xl font-bold text-gray-800">Baby Shower</h3>
+            <p class="text-gray-700 mt-2">Venue: Bangalore</p>
+            <p class="text-gray-600">Date: Sept 16, 2025</p>
+            <p class="text-gray-600">Time: 10:00 AM - 1:00 PM</p>
+          </div>
+        </div>
+      </div>
+       <div class="book">
+        <div class="book-inner">
+          <div class="book-front">
+            <img src="https://cdn.prod.website-files.com/60d27e95cceae4cfc65345b4/62b2285b7ec852fda0d9de6e_2019%20Charity%20Gala.jpg" alt="Charity">
+          </div>
+          <div class="book-back">
+            <h3 class="text-xl font-bold text-gray-800">Charity Gala</h3>
+            <p class="text-gray-700 mt-2">Venue: Le Meridian, Kochi</p>
+            <p class="text-gray-600">Date: Nov 5, 2025</p>
+            <p class="text-gray-600">Time: 11:00 AM - 5:00 PM</p>
+          </div>
+        </div>
+      </div>
+       <div class="book">
+        <div class="book-inner">
+          <div class="book-front">
+            <img src="https://s3.india.com/wp-content/uploads/2024/12/7-Destinations-Where-You-Should-Travel-For-A-Breathtaking-New-Year-Party.jpg?impolicy=Medium_Widthonly&w=350&h=263" alt="New Bash">
+          </div>
+          <div class="book-back">
+            <h3 class="text-xl font-bold text-gray-800">New Year Bash</h3>
+            <p class="text-gray-700 mt-2">Venue: Baga Beach,Goa</p>
+            <p class="text-gray-600">Date: Dec 31, 2025</p>
+            <p class="text-gray-600">Time: 8:00 PM - 12:00 AM</p>
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</body>
+
+</html>

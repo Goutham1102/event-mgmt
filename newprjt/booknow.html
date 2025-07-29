@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Booking Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        /* From Uiverse.io by vikiWayne */
+        .button {
+            padding: 1em 2em;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: #021619;
+            transition: all 1000ms;
+            font-size: 15px;
+            position: relative;
+            overflow: hidden;
+            outline: 2px solid #03252b;
+        }
+
+        button:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+            outline: 2px solid #012025;
+            box-shadow: 4px 5px 17px -4px #00090a;
+        }
+
+        button::before {
+            content: "";
+            position: absolute;
+            left: -50px;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: #021215;
+            transform: skewX(45deg);
+            z-index: -1;
+            transition: width 1000ms;
+        }
+
+        button:hover::before {
+            width: 250%;
+        }
+    </style>
+
+</head>
+
+<body class="bg-cover bg-center bg-no-repeat min-h-screen">
+    <!-- navbar         -->
+
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/30 dark:bg-white/10 border-b border-white/20">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3">
+                <img src="./images/ChatGPT Image Jul 25, 2025, 12_42_38 AM.png" alt="" width="40px" height="40px">
+
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-black " href="./index.html">Ereignis</span>
+            </a>
+
+            <!-- Right section: Search & menu button -->
+            <div class="flex md:order-2 items-center gap-2">
+
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-search" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300">
+                    <span class="sr-only">Open menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menu Links -->
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                <ul
+                    class="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 p-4 md:p-0 font-medium bg-white/10 md:bg-transparent border border-white/10 md:border-0 rounded-lg backdrop-blur-md text-white">
+                    <li>
+                        <a href="./index.html"
+                            class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">Home</a>
+                    </li>
+                    <li class="relative group">
+                        <a href="#"
+                            class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">
+                            Events
+                        </a>
+
+                        <!-- Dropdown Menu -->
+                        <ul
+                            class="absolute left-0 mt-2 hidden group-hover:block bg-white border rounded-md shadow-md min-w-[150px] z-10">
+                            <li>
+                                <a href="#weddings" class="block px-4 py-2 hover:bg-gray-100 text-zinc-800">Weddings</a>
+                            </li>
+                            <li>
+                                <a href="#birthdays"
+                                    class="block px-4 py-2 hover:bg-gray-100 text-zinc-800">Birthdays</a>
+                            </li>
+                            <li>
+                                <a href="#concerts" class="block px-4 py-2 hover:bg-gray-100 text-zinc-800">Concerts</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#services"
+                            class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">Services</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="flex mx-20 mb-10">
+        <!-- Top Image Section -->
+        <div>
+            <img src="https://images.unsplash.com/photo-1657664072464-e525da1d426e?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Event" width="90%" height="900px">
+        </div>
+        <div class="max-w-3xl  bg-white border border-black rounded-xl shadow-xl overflow-hidden ">
+            <!-- Booking Form -->
+            <form class="p-8 space-y-6 bg-white">
+                <h2 class="text-3xl font-bold border-b pb-2 text-center">Book Your Event</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Name -->
+                    <div>
+                        <label class="block mb-1 font-semibold">Full Name</label>
+                        <input type="text" required placeholder="Your full name"
+                            class="w-full px-4 py-2 rounded-lg border border-black bg-white focus:ring- focus:ring-black" />
+                    </div>
+
+                    <!-- Email -->
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block mb-1 font-semibold">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="yourname@example.com" required
+                            class="w-full px-4 py-2 rounded-lg border border-black bg-white focus:ring- focus:ring-black" />
+                    </div>
+
+
+                    <!-- Contact -->
+                    <div>
+                        <label class="block mb-1 font-semibold">Contact Number</label>
+                        <input type="tel" required placeholder="Enter your phone number"
+                            class="w-full px-4 py-2 rounded-lg border border-black bg-white focus:ring-2 focus:ring-black" />
+                    </div>
+
+
+                    <!-- Preferred Venue -->
+                    <div>
+                        <label class="block mb-1 font-semibold">Preferred Venue</label>
+                        <input type="text" required placeholder="Location or hall name"
+                            class="w-full px-4 py-2 rounded-lg border border-black bg-white focus:ring-2 focus:ring-black" />
+                    </div>
+
+
+                    <!-- Event Type Radio Buttons -->
+                    <div>
+                        <label class="block mb-2 font-semibold"><i class="fas fa-calendar-alt mr-2"></i>Event
+                            Type</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center space-x-3">
+                                <input type="radio" name="eventType" value="wedding"
+                                    class="form-radio text-black focus:ring-black" required>
+                                <span>Wedding</span>
+                            </label>
+                            <label class="flex items-center space-x-3">
+                                <input type="radio" name="eventType" value="birthday"
+                                    class="form-radio text-black focus:ring-black">
+                                <span>Birthday</span>
+                            </label>
+                            <label class="flex items-center space-x-3">
+                                <input type="radio" name="eventType" value="corporate"
+                                    class="form-radio text-black focus:ring-black">
+                                <span>Corporate</span>
+                            </label>
+                            <label class="flex items-center space-x-3">
+                                <input type="radio" name="eventType" value="anniversary"
+                                    class="form-radio text-black focus:ring-black">
+                                <span>Anniversary</span>
+                            </label>
+                            <label class="flex items-center space-x-3">
+                                <input type="radio" name="eventType" value="other"
+                                    class="form-radio text-black focus:ring-black">
+                                <span>Other</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Additional Requests -->
+                    <div class="relative">
+                        <label for="requests"
+                            class="absolute -top-2 left-3 bg-white px-1 text-sm font-medium text-gray-700">
+                            Additional Requests
+                        </label>
+                        <textarea id="requests" rows="5" maxlength="300"
+                            placeholder="Mention anything specific (e.g. decoration, food preference)..."
+                            class="w-full mt-5 px-4 py-3 rounded-xl border border-black bg-white focus:outline-none focus:ring-2 focus:ring-black resize-none"></textarea>
+                        <p class="text-sm text-gray-500 mt-1 text-right">Max 300 characters</p>
+                    </div>
+
+
+                    <!-- Submit Button -->
+                    <div><!-- From Uiverse.io by ernestnash -->
+
+                        <!-- From Uiverse.io by KINGFRESS -->
+
+                        <!-- From Uiverse.io by vikiWayne -->
+                        <button class="button">Book Now</button>
+
+            </form>
+        </div>
+    </section>
+    <!-- Available Venues Section -->
+<section class="bg-gray-50 py-16" style="font-family: 'Montserrat', sans-serif;">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-semibold text-center text-gray-800 mb-12">Available Venues</h2>
+
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Venue 1 -->
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition duration-300">
+        <img src="https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2018/07/02/1034/Grand-Hyatt-Kochi-Bolgatty-P068-Liwa.jpg/Grand-Hyatt-Kochi-Bolgatty-P068-Liwa.4x3.jpg" alt="Grand Royale Hall" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Grand Royale Hall</h3>
+          <p class="text-gray-600 mb-4">Perfect for weddings, receptions, and grand ceremonies. Capacity: 500+</p>
+          <a href="./venue-details.html#grand-royale" class="text-indigo-600 hover:underline text-sm font-medium">
+            View Details →
+          </a>
+        </div>
+      </div>
+
+      <!-- Venue 2 -->
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition duration-300">
+        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/7JZX0u3ohShDehR47MNnnQ/348s.jpg" alt="Skyline Terrace" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">Skyline Terrace</h3>
+          <p class="text-gray-600 mb-4">Open-air rooftop with a scenic view, ideal for corporate parties and birthdays.</p>
+          <a href="./venue-details.html#skyline-terrace" class="text-indigo-600 hover:underline text-sm font-medium">
+            View Details →
+          </a>
+        </div>
+      </div>
+
+      <!-- Venue 3 -->
+      <div class="bg-white shadow-lg rounded-xl overflow-hidden hover:shadow-xl transition duration-300">
+        <img src="https://cdn0.weddingwire.in/vendor/4517/3_2/640/jpg/00gp9907_15_214517-171964823567862.jpeg" alt="The Garden Pavilion" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2 text-gray-800">The Garden Pavilion</h3>
+          <p class="text-gray-600 mb-4">Lush green lawns and floral ambiance—best for engagement parties and photoshoots.</p>
+          <a href="./venue-details.html#garden-pavilion" class="text-indigo-600 hover:underline text-sm font-medium">
+            View Details →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- footer -->
+    <footer class="bg-gray-200 dark:bg-zinc-500" style="font-family: 'Montserrat', sans-serif;" id="services">
+        <div class="mx-auto w-full max-w-screen-xl px-6 py-10">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-3">
+                <!-- Company -->
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-800 uppercase dark:text-white">Company</h2>
+                    <ul class="text-gray-900 dark:text-black font-light space-y-3">
+                        <li><a href="#" class="hover:underline">About</a></li>
+                        <li><a href="#" class="hover:underline">Careers</a></li>
+                        <li><a href="#" class="hover:underline">Brand Center</a></li>
+                        <li><a href="#" class="hover:underline">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Help Center -->
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-800 uppercase dark:text-white">Help Center</h2>
+                    <ul class="text-gray-600 dark:text-gray-400 font-light space-y-3">
+                        <li><a href="#" class="hover:underline">Support</a></li>
+                        <li><a href="#" class="hover:underline">Guides</a></li>
+                        <li><a href="#" class="hover:underline">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-800 uppercase dark:text-white">Legal</h2>
+                    <ul class="text-gray-600 dark:text-gray-400 font-light space-y-3">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Licensing</a></li>
+                        <li><a href="#" class="hover:underline">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="mt-10 border-t border-gray-300 dark:border-gray-700 pt-6 flex flex-col md:flex-row items-center justify-between">
+                <span class="text-sm text-gray-600 dark:text-gray-300">© 2025 <a href="#"
+                        class="font-medium text-gray-800 dark:text-white">Ereignis™</a>. All Rights Reserved.</span>
+
+                <!-- Social Icons -->
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-gray-800 dark:hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 17" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z" />
+                        </svg>
+                        <span class="sr-only">Twitter</span>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-800 dark:hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

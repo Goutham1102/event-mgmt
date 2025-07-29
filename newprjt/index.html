@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventmanagement</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
+    <!-- fontawesom -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Bitcount+Grid+Double:wght@100..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Borel&family=Italiana&family=Montserrat:ital,wght@0,100..900;1,100..900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Pirata+One&family=Zen+Tokyo+Zoo&display=swap"
+        rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" href="./images/bg.png">
+
+    <style>
+        * {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="bg-cover bg-center bg-no-repeat min-h-screen">
+    <!-- navbar         -->
+
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/30 dark:bg-white/10 border-b border-white/20">
+        <div class=" flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3">
+                 <img src="./images/logo.png" alt="" width="40px" height="40px">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-black ">Ereignis</span>
+            </a>
+
+            <!-- Right section: Search & menu button -->
+            <div class="flex md:order-2 items-center gap-2">
+                <div class="relative hidden md:block">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="text"
+                        class="block w-full p-2 ps-10 text-sm text-white border border-gray-100 rounded-sm  placeholder-white  bg-stone-700"
+                        placeholder="Search..." />
+                </div>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-search" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300">
+                    <span class="sr-only">Open menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menu Links -->
+           <!-- Menu Links -->
+<div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+    <ul
+        class="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 p-4 md:p-0 font-medium bg-white/10 md:bg-transparent border border-white/10 md:border-0 rounded-lg backdrop-blur-md text-white">
+
+        <li>
+            <a href="./index.html"
+                class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">Home</a>
+        </li>
+        <li>
+            <a href="#about"
+                class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">About</a>
+        </li>
+        <li>
+            <a href="#services"
+                class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">Services</a>
+        </li>
+        <li>
+            <a href="./contact.html"
+                class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">Contact</a>
+        </li>
+
+        <!-- Login Button Style -->
+        <li>
+            <a href="./login.html"
+                class="inline-block bg-stone-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition duration-300">
+                Login
+            </a>
+        </li>
+    </ul>
+</div>
+
+    </nav>
+
+    <!-- content/ banner -->
+    <section class="relative w-full bg-cover bg-center bg-no-repeat overflow-hidden"
+         style="font-family: 'Montserrat', sans-serif;">
+
+  <!-- Gradient Background -->
+  <div class="absolute inset-0 animate-gradient bg-[length:300%_300%] z-0"></div>
+
+  <!-- Centered Content -->
+  <div class="relative z-10 flex flex-col justify-center items-center min-h-screen px-8 text-center">
+    <h1 class="text-4xl mb-4 text-stone-900 font-normal">
+      Seamless Events. Lasting Impressions.
+    </h1>
+    <div class="text-xl font-light text-stone-700 mb-10">
+      Efficient &nbsp;•&nbsp; Scalable &nbsp;•&nbsp; Simplified &nbsp;•&nbsp; Digitized
+    </div>
+
+    <div class="bg-white/30 border border-white/10 backdrop-blur-md rounded-lg p-8 max-w-xl text-white text-left shadow-md">
+      <p class="mb-6 text-black">Book a slot today</p>
+      <a href="./booknow.html"
+        class="text-white bg-black font-semibold py-2 px-6 rounded-full hover:bg-indigo-900 inline-block text-center transition">
+        Book Now!
+      </a>
+    </div>
+  </div>
+
+  <!-- Gradient Animation -->
+  <style>
+    .animate-gradient {
+      background: linear-gradient(-45deg, #fddefb, #e1f7f5cc, #f5f9c3, #c3e0f0);
+      animation: gradientShift 18s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  </style>
+</section>
+
+
+
+    <div id="default-carousel" class="relative w-full shadow-xl" data-carousel="slide">
+  <!-- Carousel wrapper -->
+  <div class="relative h-56 overflow-hidden md:h-96">
+    <!-- Carousel Items -->
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="https://images.pexels.com/photos/50675/banquet-wedding-society-deco-50675.jpeg"
+        class="absolute inset-0 w-full h-full object-cover" alt="Wedding Venue">
+    </div>
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg"
+        class="absolute inset-0 w-full h-full object-cover" alt="Conference Setup">
+    </div>
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg"
+        class="absolute inset-0 w-full h-full object-cover" alt="Birthday Party">
+    </div>
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="https://images.pexels.com/photos/1157557/pexels-photo-1157557.jpeg"
+        class="absolute inset-0 w-full h-full object-cover" alt="Outdoor Event">
+    </div>
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg"
+        class="absolute inset-0 w-full h-full object-cover" alt="Corporate Banquet">
+    </div>
+  </div>
+
+  <!-- Indicators -->
+  <div class="absolute z-30 flex -translate-x-1/2 bottom-4 left-1/2 space-x-3">
+    <button type="button" class="w-3 h-3 bg-white/60 rounded-full hover:bg-white" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+    <button type="button" class="w-3 h-3 bg-white/60 rounded-full hover:bg-white" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+    <button type="button" class="w-3 h-3 bg-white/60 rounded-full hover:bg-white" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+    <button type="button" class="w-3 h-3 bg-white/60 rounded-full hover:bg-white" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+    <button type="button" class="w-3 h-3 bg-white/60 rounded-full hover:bg-white" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+  </div>
+
+  <!-- Controls -->
+  <button type="button"
+    class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 group"
+    data-carousel-prev>
+    <span
+      class="inline-flex items-center justify-center w-10 h-10 bg-black/40 hover:bg-black/70 text-white rounded-full">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 6 10">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+      </svg>
+    </span>
+  </button>
+
+  <button type="button"
+    class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 group"
+    data-carousel-next>
+    <span
+      class="inline-flex items-center justify-center w-10 h-10 bg-black/40 hover:bg-black/70 text-white rounded-full">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 6 10">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+      </svg>
+    </span>
+  </button>
+</div>
+
+
+    <!-- about us -->
+    <section style="font-family: 'Montserrat', sans-serif;" class="bg-gray-50 py-20 px-6 " id="about">
+        <div class="grid grid-cols-2 gap-6">
+            <div class="max-w-5xl mx-auto ">
+                <h2 class="text-4xl font-semibold text-gray-800 mb-6 text-center pb-5">About Us</h2>
+                <p class="text-lg text-gray-700 leading-relaxed font-light mb-8">
+                    We’re not just event planners — we’re experience creators.
+                    At <span class="font-medium text-gray-900">Ereignis™</span>, we believe that every event, no matter
+                    how big or small, deserves to feel special. Whether it’s a corporate summit, a music festival, or
+                    your dream wedding — we craft every moment like it’s the main event.
+                </p>
+
+                <p class="text-lg text-gray-700 leading-relaxed font-light mb-8">
+                    Our journey started with a simple idea: <em>why should organizing events feel chaotic?</em> We
+                    combined technology, creativity, and a dash of caffeine to bring you a seamless event management
+                    experience. From online booking and real-time updates to on-ground execution and feedback tracking —
+                    we handle it all.
+                </p>
+
+                <p class="text-lg text-gray-700 leading-relaxed font-light mb-8">
+                    Think of us as your backstage crew, digital assistant, and creative team — all rolled into one. You
+                    dream it, we build it (and probably obsess over the lighting and playlist while we’re at it).
+                </p>
+
+                <p class="text-lg text-gray-700 leading-relaxed font-light">
+                    So go ahead, plan boldly. Whether it’s 50 guests or 5,000 — we’re here to turn your vision into
+                    reality, stress-free and style-packed. Because events shouldn’t just be managed — they should be
+                    *magical*.
+                </p>
+
+                <div class="mt-10 pt-3 ">
+                    <a href="./contact.html"
+                        class="inline-block bg-black text-white text-sm font-medium px-6 py-3 rounded-full hover:bg-indigo-800 transition">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+            <!-- about image -->
+            <div class="pt-15">
+                <img src="./images/about.jpg" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- Event Types Gallery -->
+<section id ="services" style="font-family: 'Montserrat', sans-serif;" class="bg-gray-100 py-20 px-6">
+  <div class="mx-auto">
+    <h2 class="text-3xl font-semibold text-center text-gray-800 mb-12 pb-3">Types of Events We Organize</h2>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- Wedding -->
+      <a href="weddings.html" class="block transform hover:scale-105 transition duration-300">
+        <div class="overflow-hidden rounded-xl shadow-md bg-white">
+          <img src="https://eventsmanagementkerala.com/wp-content/uploads/2023/02/blog-2.27e5a04.webp" alt="Wedding Event" class="w-full h-64 object-cover">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-gray-800">Weddings</h3>
+          </div>
+        </div>
+      </a>
+
+      <!-- Birthday -->
+      <a href="birthday.html" class="block transform hover:scale-105 transition duration-300">
+        <div class="overflow-hidden rounded-xl shadow-md bg-white">
+          <img src="https://www.partyone.in/img/category_landing/artists/balloon_decor.webp" alt="Birthday Event" class="w-full h-64 object-cover">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-gray-800">Birthdays</h3>
+          </div>
+        </div>
+      </a>
+
+      <!-- Corporate -->
+      <a href="corporate.html" class="block transform hover:scale-105 transition duration-300">
+        <div class="overflow-hidden rounded-xl shadow-md bg-white">
+          <img src="https://www.eventbrite.com/blog/wp-content/uploads/2022/06/corporate-event-entertainment-ideas-1-2.jpeg" alt="Corporate Event" class="w-full h-64 object-cover">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-gray-800">Corporate Events</h3>
+          </div>
+        </div>
+      </a>
+
+      <!-- Concert -->
+      <a href="concerts.html" class="block transform hover:scale-105 transition duration-300">
+        <div class="overflow-hidden rounded-xl shadow-md bg-white">
+          <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/JQ/NL/CE/180340822/live-concerts-event-500x500.jpg" alt="Concert" class="w-full h-64 object-cover">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-gray-800">Concerts</h3>
+          </div>
+        </div>
+      </a>
+
+      <!-- Festival -->
+      <a href="festival.html" class="block transform hover:scale-105 transition duration-300">
+        <div class="overflow-hidden rounded-xl shadow-md bg-white">
+          <img src="https://www.venuereport.com/media/cache/resolve/venue_roundup_single_image/uploads/+0Regular_Roundup/2018/5-May/WorldFestivals/YeePengLanternFestival-JacobRiglin-01.jpg" alt="Festive Celebration" class="w-full h-64 object-cover">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-gray-800">Festive Celebrations</h3>
+          </div>
+        </div>
+      </a>
+
+      <!-- Product Launch -->
+      <a href="product.html" class="block transform hover:scale-105 transition duration-300">
+        <div class="overflow-hidden rounded-xl shadow-md bg-white">
+          <img src="https://www.bizzabo.com/wp-content/uploads/2018/11/3686-1024x683.jpg" alt="Product Launch" class="w-full h-64 object-cover">
+          <div class="p-4 text-center">
+            <h3 class="text-lg font-semibold text-gray-800">Product Launches</h3>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- upcoming events
+  -->
+
+<section style="font-family: 'Montserrat', sans-serif;" class="bg-gray-100 py-20 px-6">
+  <div class="mx-auto">
+    <h2 class="text-3xl font-semibold text-center text-gray-800 mb-12 pb-3">Upcoming Event Gallery</h2>
+
+    <!-- Button linking to full gallery -->
+    <div class="text-center mt-6">
+      <a href="./gallery.html" class="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-full shadow hover:bg-blue-700 transition duration-300">
+        View Full Event Gallery
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+    <!-- Frequently Asked Questions -->
+    <section style="font-family: 'Montserrat', sans-serif;" class="bg-[#f9fafb] text-gray-800 py-16">
+        <div class="mx-auto px-4">
+            <h1 class="text-3xl font-medium mb-10 text-center text-gray-800 pb-10">Frequently Asked Questions</h1>
+
+
+            <div id="accordion-collapse" data-accordion="collapse" class="px-20 pb-20">
+                <h2 id="accordion-collapse-heading-1">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 rounded-t-xl focus:ring-1 focus:ring-gray-100 dark:focus:ring-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                        data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
+                        aria-controls="accordion-collapse-body-1">
+                        <span>What Is the Purpose of Event Management Software?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
+                    <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">The purpose of event management software is to
+                            streamline the planning, coordination, and execution of events through a centralized digital
+                            platform. An event management software enables you to manage registrations, ticketing,
+                            scheduling, communication, and event analytics in one place.
+
+                            By using a professional event management solution, you can make your event planning more
+                            efficient, scalable, and organized. It reduces manual tasks and enhances the attendee
+                            experience
+                            by bringing all event operations into a single, easy-to-use system.</p>
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-2">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-b-0 border-gray-200 focus:ring-1 focus:ring-gray-100 dark:focus:ring-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                        data-accordion-target="#accordion-collapse-body-2" aria-expanded="false"
+                        aria-controls="accordion-collapse-body-2">
+                        <span>Who Should Use Event Management Software?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+                    <div class="p-5 border border-b-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Event management software is designed for event
+                            planners, marketers, HR professionals, and organizations that host events such as
+                            conferences,
+                            trade shows, workshops, or corporate gatherings.
+
+                            This type of software simplifies event logistics, enhances attendee engagement, and ensures
+                            seamless event execution from planning to post-event analysis.
+
+                            The software helps simplify event logistics, boost engagement, and ensure seamless execution
+                            from conception to finish. </p>
+
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-3">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-1 focus:ring-gray-100 dark:focus:ring-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                        data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
+                        aria-controls="accordion-collapse-body-3">
+                        <span>What Features Should I Look for in Event Management Software?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+                    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Key features to look for in event management
+                            software include registration management, customizable event websites, attendee
+                            communication
+                            tools, and real-time analytics.
+
+                            Additional helpful features include a mobile check-in app, virtual and hybrid event
+                            capabilities, and integrations with CRM or marketing automation tools. A user-friendly
+                            interface
+                            and scalable design are also important if you’re planning to grow your event portfolio over
+                            time.
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-3">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-1 focus:ring-gray-100 dark:focus:ring-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                        data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
+                        aria-controls="accordion-collapse-body-3">
+                        <span>What aspects of my events can I manage using Ereignis™</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+                    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Ereignis™ is an event management software that
+                            lets
+                            you manage every stage of your event — from planning to execution — within one platform.
+
+                            You can handle event registration, ticketing, payments, marketing campaigns, attendee
+                            check-ins,
+                            and engagement tools, all while leveraging real-time event data and analytics to improve
+                            performance and ROI.
+
+                            With Eventtia, you also benefit from a fully customizable solution and support from a
+                            dedicated
+                            team, ensuring your event runs smoothly and meets your specific goals.
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-3">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-1 focus:ring-gray-100 dark:focus:ring-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                        data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
+                        aria-controls="accordion-collapse-body-3">
+                        <span>What kind of support does Ereignis offer?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+                    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">Ereignis™ offers support in English, Spanish,
+                            and
+                            French 14 hours a day, 5 days a week, with teams based in France, Spain, Mexico, and
+                            Colombia.
+                            You can reach us via live chat, email, or phone.
+
+                            We provide training and onboarding, and each account is assigned a dedicated manager.
+
+                            Premium customer support is also available for assistance with creating and managing your
+                            events.
+                    </div>
+                </div>
+                <h2 id="accordion-collapse-heading-3">
+                    <button type="button"
+                        class="flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border border-gray-200 focus:ring-1 focus:ring-gray-100 dark:focus:ring-gray-200 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3"
+                        data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
+                        aria-controls="accordion-collapse-body-3">
+                        <span>How is Eventtia different from other management platforms?</span>
+                        <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 5 5 1 1 5" />
+                        </svg>
+                    </button>
+                </h2>
+                <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+                    <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                        <p class="mb-2 text-gray-500 dark:text-gray-400">At Ereignis™, we pride ourselves on fostering
+                            strong
+                            and long-lasting partnerships with our clients.
+
+                            That’s why leading companies such as Coca-Cola, Van Cleef & Arpels, Toyota, Nestle,
+                            Bioderma,
+                            BBVA, Pernod Ricard, and many others have partnered with Eventtia, to help them digitize and
+                            scale their events.
+
+                            Unlike other platforms, Eventtia offers a fully customizable and evolutive event management
+                            software tailored to meet your unique needs . With Eventtia, you have the freedom to execute
+                            your events precisely the way you envision, in total respect of your brand guidelines.
+                    </div>
+                </div>
+            </div>
+
+
+    </section>
+    <!-- Customer Reviews -->
+<section style="font-family: 'Montserrat', sans-serif;" class="bg-white text-gray-800 py-16">
+  <div class=" mx-auto px-4">
+    <h2 class="text-3xl font-medium text-center mb-12">What Our Clients Say</h2>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Review 1 -->
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition duration-300">
+        <p class="text-gray-600 mb-4">"Aura Events made our product launch seamless and unforgettable. The team was incredibly professional and detail-oriented."</p>
+        <div class="flex items-center gap-4">
+          <img src="https://i.pravatar.cc/50?img=1" alt="Client Photo" class="w-12 h-12 rounded-full">
+          <div>
+            <h4 class="font-semibold text-gray-800">Aarav Mehta</h4>
+            <span class="text-sm text-gray-500">Marketing Head, Lumina Tech</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition duration-300">
+        <p class="text-gray-600 mb-4">"From concept to execution, the entire process was stress-free. I’d recommend Ereignis™ Events to anyone planning a big event."</p>
+        <div class="flex items-center gap-4">
+          <img src="https://i.pravatar.cc/50?img=8" alt="Client Photo" class="w-12 h-12 rounded-full">
+          <div>
+            <h4 class="font-semibold text-gray-800">Sneha Ramesh</h4>
+            <span class="text-sm text-gray-500">Founder, Artistry Expo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition duration-300">
+        <p class="text-gray-600 mb-4">"We hosted a hybrid conference and Aura made everything from attendee registration to live streaming smooth and elegant."</p>
+        <div class="flex items-center gap-4">
+          <img src="https://i.pravatar.cc/50?img=5" alt="Client Photo" class="w-12 h-12 rounded-full">
+          <div>
+            <h4 class="font-semibold text-gray-800">Rahul Varghese</h4>
+            <span class="text-sm text-gray-500">Event Coordinator, GreenFuture</span>
+          </div>
+        </div>
+      </div>
+        <!-- Review 2 -->
+      <div class="bg-gray-100 p-6 rounded-xl shadow hover:shadow-md transition duration-300">
+        <p class="text-gray-600 mb-4">"From concept to execution, the entire process was stress-free. I’d recommend ereginis Events to anyone planning a big event."</p>
+        <div class="flex items-center gap-4">
+          <img src="https://i.pravatar.cc/50?img=8" alt="Client Photo" class="w-12 h-12 rounded-full">
+          <div>
+            <h4 class="font-semibold text-gray-800">siya chandrashekhar</h4>
+            <span class="text-sm text-gray-500">Founder, zhizho enterprise</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+    <!-- footer -->
+    <footer class="bg-gray-200 dark:bg-zinc-500" style="font-family: 'Montserrat', sans-serif;" id="services">
+        <div class="mx-auto w-full max-w-screen-xl px-6 py-10">
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-3">
+                <!-- Company -->
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-800 uppercase dark:text-white">Company</h2>
+                    <ul class="text-gray-900 dark:text-black font-light space-y-3">
+                        <li><a href="#" class="hover:underline">About</a></li>
+                        <li><a href="#" class="hover:underline">Careers</a></li>
+                        <li><a href="#" class="hover:underline">Brand Center</a></li>
+                        <li><a href="#" class="hover:underline">Blog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Help Center -->
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-800 uppercase dark:text-white">Help Center</h2>
+                    <ul class="text-gray-600 dark:text-gray-400 font-light space-y-3">
+                        <li><a href="#" class="hover:underline">Support</a></li>
+                        <li><a href="#" class="hover:underline">Guides</a></li>
+                        <li><a href="#" class="hover:underline">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h2 class="mb-6 text-sm font-semibold text-gray-800 uppercase dark:text-white">Legal</h2>
+                    <ul class="text-gray-600 dark:text-gray-400 font-light space-y-3">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Licensing</a></li>
+                        <li><a href="#" class="hover:underline">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="mt-10 border-t border-gray-300 dark:border-gray-700 pt-6 flex flex-col md:flex-row items-center justify-between">
+                <span class="text-sm text-gray-600 dark:text-gray-300">© 2025 <a href="#"
+                        class="font-medium text-gray-800 dark:text-white">Ereignis™</a>. All Rights Reserved.</span>
+
+                <!-- Social Icons -->
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-gray-800 dark:hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 17" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z" />
+                        </svg>
+                        <span class="sr-only">Twitter</span>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-gray-800 dark:hover:text-white transition">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z"
+                                clip-rule="evenodd" />
+                        </svg>
+                        <span class="sr-only">GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

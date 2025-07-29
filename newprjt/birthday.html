@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>event management</title>
+
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+  <style>
+    
+
+    .hover-card:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-r from-black via-gray-500 to-white">
+  
+
+<body class="bg-gray-100 " style="background-image: url('./images/birthdays.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+      <!-- navbar         -->
+
+    
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-white/30 dark:bg-white/10 border-b border-white/20">
+        <div class=" flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3">
+                 <img src="./images/logo.png" alt="" width="40px" height="40px">
+                <span class="self-center text-2xl font-semibold whitespace-nowrap text-black ">Ereignis</span>
+            </a>
+
+            <!-- Right section: Search & menu button -->
+            <div class="flex md:order-2 items-center gap-2">
+                <div class="relative hidden md:block">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="text"
+                        class="block w-full p-2 ps-10 text-sm text-white border border-gray-100 rounded-sm  placeholder-white  bg-stone-700"
+                        placeholder="Search..." />
+                </div>
+
+                <!-- Mobile menu button -->
+                <button data-collapse-toggle="navbar-search" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-300">
+                    <span class="sr-only">Open menu</span>
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 17 14" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Menu Links -->
+           <!-- Menu Links -->
+<div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+    <ul
+        class="flex flex-col md:flex-row md:space-x-8 mt-4 md:mt-0 p-4 md:p-0 font-medium bg-white/10 md:bg-transparent border border-white/10 md:border-0 rounded-lg backdrop-blur-md text-white">
+
+        <li>
+            <a href="./index.html"
+                class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">Home</a>
+        </li>
+        <li>
+            <a href="#about"
+                class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">About</a>
+        </li>
+        <li>
+            <a href="#services"
+                class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">Services</a>
+        </li>
+        <li>
+            <a href="./contact.html"
+                class="block py-2 px-3 rounded-md hover:bg-white/10 hover:text-blue-500 transition-colors duration-200 text-zinc-900">Contact</a>
+        </li>
+
+        <!-- Login Button Style -->
+        <li>
+            <a href="./login.html"
+                class="inline-block bg-stone-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition duration-300">
+                Login
+            </a>
+        </li>
+    </ul>
+</div>
+
+    </nav>
+
+  
+  <section>
+        <i>
+            <h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"
+                class="text-4xl  mb-4 pt-15 pb-10 text-center text-stone-900 font-normal">Let's Celebrate Your Special Day in Style!</h1>
+        </i>
+
+    </section>
+
+  <!--Offering -->
+  <section class="text-center py-8">
+    <h2 class="text-3xl text-blue-800 mb-4">What We Offer</h2>
+    <p class="text-lg text-black-700 max-w-xl mx-auto">
+      From cakes to balloons, from lights to laughter, we bring your dream birthday celebration to life with vibrant themes and personalized experiences.
+    </p>
+  </section>
+
+  <!-- Card Gallery -->
+  
+
+  <!-- cards -->
+  <section>
+    <div class="flex flex-wrap justify-center gap-6 p-4">
+      <div class="max-w-sm bg-indigo-100 rounded-xl shadow-lg hover-card">
+        <img class="rounded-t-xl" src="https://images.pexels.com/photos/2072149/pexels-photo-2072149.jpeg" alt="Cake" />
+        <div class="p-4 text-center">
+          <p class="text-lg text-indigo-800">Cards</p>
+          <a href="./booknow.html" class="mt-2 inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded">Book Now</a>
+        </div>
+      </div>
+
+      <div class="max-w-sm bg-purple-100 rounded-xl shadow-lg hover-card">
+        <img class="rounded-t-xl" src="https://cdn.pixabay.com/photo/2017/01/09/02/02/pink-wine-1964457_1280.jpg" alt="Decor" />
+        <div class="p-4 text-center">
+          <p class="text-lg text-purple-800">Colorful Decor</p>
+          <a href="./booknow.html" class="mt-2 inline-block bg-indigo-500 hover:bg-purple-600 text-white px-4 py-2 rounded">Book Now</a>
+        </div>
+      </div>
+
+      <div class="max-w-sm bg-blue-100 rounded-xl shadow-lg hover-card">
+        <img class="rounded-t-xl" src="https://images.pexels.com/photos/3419697/pexels-photo-3419697.jpeg" alt="Balloons" />
+        <div class="p-4 text-center">
+          <p class="text-lg text-blue-800">Fun with Balloons</p>
+          <a href="./booknow.html" class="mt-2 inline-block bg-indigo-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section>
+    <div class="flex flex-wrap justify-center gap-6 p-4">
+      <div class="max-w-sm bg-indigo-100 rounded-xl shadow-lg hover-card">
+        <img class="rounded-t-xl" src="https://images.pexels.com/photos/1729808/pexels-photo-1729808.jpeg" alt="Cake" />
+        <div class="p-4 text-center">
+          <p class="text-lg text-black-800">Delicious Cakes</p>
+          <a href="./booknow.html" class="mt-2 inline-block bg-indigo-500 hover:bg-black-600 text-white px-4 py-2 rounded">Book Now</a>
+        </div>
+      </div>
+
+      <div class="max-w-sm bg-purple-100 rounded-xl shadow-lg hover-card">
+        <img class="rounded-t-xl" src="https://images.pexels.com/photos/1146409/pexels-photo-1146409.jpeg" alt="Decor" />
+        <div class="p-4 text-center">
+          <p class="text-lg text-black-800">Delicious Cakes</p>
+          <a href="./booknow.html" class="mt-2 inline-block bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded">Book Now</a>
+        </div>
+      </div>
+
+      <div class="max-w-sm bg-blue-100 rounded-xl shadow-lg hover-card">
+        <img class="rounded-t-xl" src="https://images.pexels.com/photos/227432/pexels-photo-227432.jpeg" alt="Balloons" />
+        <div class="p-4 text-center">
+          <p class="text-lg text-black-800">Delicious Cakes</p>
+          <a href="./booknow.html" class="mt-2 inline-block bg-indigo-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Photo Gallery -->
+  <section class="py-12 px-4">
+    <h2 class="text-3xl text-center text-black-800 mb-8">Photo Gallery</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <img src="https://images.pexels.com/photos/7100273/pexels-photo-7100273.jpeg" alt="Gallery 1" class="rounded-lg cursor-pointer" />
+      <img src="https://images.pexels.com/photos/7922015/pexels-photo-7922015.jpeg" alt="Gallery 2" class="rounded-lg cursor-pointer" />
+      <img src="https://images.pexels.com/photos/7100318/pexels-photo-7100318.jpeg" alt="Gallery 3" class="rounded-lg cursor-pointer" />
+    </div>
+  </section>
+   <section class="py-12 px-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <img src="https://images.pexels.com/photos/27177100/pexels-photo-27177100.jpeg" alt="Gallery 1" class="rounded-lg cursor-pointer" data-modal-target="modal1" data-modal-toggle="modal1">
+            <img src="https://images.pexels.com/photos/30768727/pexels-photo-30768727.jpeg" alt="Gallery 3" class="rounded-lg cursor-pointer" data-modal-target="modal3" data-modal-toggle="modal3">
+            <img src="https://images.pexels.com/photos/27176364/pexels-photo-27176364.jpeg" alt="Gallery 2" class="rounded-lg cursor-pointer" data-modal-target="modal2" data-modal-toggle="modal2">
+        </div>
+
+
+    </section>
+
+
+     <section class="py-12 px-4">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <img src="https://cdn.pixabay.com/photo/2023/12/26/11/46/cake-8470012_1280.jpg" data-modal-toggle="modal1">
+            <img src="https://images.pexels.com/photos/13063258/pexels-photo-13063258.jpeg" alt="Gallery 2" class="rounded-lg cursor-pointer" data-modal-target="modal2" data-modal-toggle="modal2">
+            <img src=" https://cdn.pixabay.com/photo/2014/06/30/11/40/cupcakes-380178_1280.jpg" alt="Gallery 3" class="rounded-lg cursor-pointer" data-modal-target="modal3" data-modal-toggle="modal3">
+        </div>
+
+
+    </section>
+
+  
+
+  <!-- About Us -->
+  <section class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
+      <img src="https://images.pexels.com/photos/7100273/pexels-photo-7100273.jpeg" class="w-full md:w-1/2 rounded-xl shadow-lg" alt="About Us" />
+      <div>
+        <h2 class="text-3xl text-indigo-700 font-bold mb-4">About Us</h2>
+        <p class="text-gray-700 text-lg">
+          At Ereignis, we specialize in creating unforgettable celebrations tailored to your unique style and vision. Our dedicated team works passionately to craft each party with joy, creativity, and a touch of magic.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+
+<section class="bg-purple-100 py-10 text-center">
+  <h2 class="text-2xl font-bold text-purple-800 mb-2">Stay Updated!</h2>
+  <p class="text-gray-700 mb-4">Sign up for exclusive birthday ideas & discounts.</p>
+  <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-l border border-purple-300">
+  <button class="bg-purple-500 text-white px-4 py-2 rounded-r hover:bg-purple-600">Subscribe</button>
+</section>
+
+
+
+
+
+<section class="bg-white py-10 px-4" id="faq">
+  <h2 class="text-3xl text-center text-indigo-700 mb-8">Frequently Asked Questions</h2>
+
+  <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-purple-100 text-purple-800" class="max-w-2xl mx-auto border border-gray-200 rounded-lg">
+    
+    <h2 id="faq1">
+      <button type="button" class="flex justify-between items-center w-full p-5 font-medium text-left text-gray-500 border-b border-gray-200"
+        data-accordion-target="#faq-body-1" aria-expanded="false" aria-controls="faq-body-1">
+        <span>How far in advance should I book a birthday party?</span>
+        <svg data-accordion-icon class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    </h2>
+    <div id="faq-body-1" class="hidden" aria-labelledby="faq1">
+      <div class="p-5 border-b border-gray-200 text-gray-600">
+        We recommend booking at least 2 weeks in advance to ensure availability and proper planning.
+      </div>
+    </div>
+
+    <h2 id="faq2">
+      <button type="button" class="flex justify-between items-center w-full p-5 font-medium text-left text-gray-500 border-b border-gray-200"
+        data-accordion-target="#faq-body-2" aria-expanded="false" aria-controls="faq-body-2">
+        <span>Do you provide customized decorations?</span>
+        <svg data-accordion-icon class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    </h2>
+    <div id="faq-body-2" class="hidden" aria-labelledby="faq2">
+      <div class="p-5 border-b border-gray-200 text-gray-600">
+        Yes! We offer fully customizable themes, color palettes, and props to match your preferences.
+      </div>
+    </div>
+
+    <h2 id="faq3">
+      <button type="button" class="flex justify-between items-center w-full p-5 font-medium text-left text-gray-500"
+        data-accordion-target="#faq-body-3" aria-expanded="false" aria-controls="faq-body-3">
+        <span>Can you arrange food and entertainment too?</span>
+        <svg data-accordion-icon class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+    </h2>
+    <div id="faq-body-3" class="hidden" aria-labelledby="faq3">
+      <div class="p-5 text-gray-600">
+        Absolutely! We collaborate with trusted caterers, magicians, and entertainers to enhance your celebration.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+  
+
+  <!-- Testimonials -->
+  <section class="bg-white py-10">
+    <h2 class="text-3xl text-center text-indigo-700 mb-8">What Our Clients Say</h2>
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 px-4">
+      <div class="bg-indigo-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <p class="text-gray-600">"Absolutely magical! The decor and cake were perfect!"</p>
+        <h4 class="mt-4 font-semibold text-indigo-700">– Anjali M.</h4>
+      </div>
+      <div class="bg-indigo-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <p class="text-gray-600">"Thanks for making my son's birthday unforgettable!"</p>
+        <h4 class="mt-4 font-semibold text-indigo-700">– Ramesh K.</h4>
+      </div>
+      <div class="bg-indigo-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <p class="text-gray-600">"Beautiful setup and friendly service. Highly recommend!"</p>
+        <h4 class="mt-4 font-semibold text-indigo-700">– Priya S.</h4>
+      </div>
+    </div>
+  </section>
+  <section class="bg-white py-10">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 px-4">
+      <div class="bg-indigo-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <p class="text-gray-600">"Absolutely magical! The decor and cake were perfect!"</p>
+        <h4 class="mt-4 font-semibold text-indigo-700">– Anjali M.</h4>
+      </div>
+      <div class="bg-indigo-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <p class="text-gray-600">"Thanks for making my son's birthday unforgettable!"</p>
+        <h4 class="mt-4 font-semibold text-indigo-700">– Ramesh K.</h4>
+      </div>
+      <div class="bg-indigo-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <p class="text-gray-600">"Beautiful setup and friendly service. Highly recommend!"</p>
+        <h4 class="mt-4 font-semibold text-indigo-700">– Priya S.</h4>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
